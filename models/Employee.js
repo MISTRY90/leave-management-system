@@ -5,7 +5,7 @@ const employeeSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   role: { type: String, enum: ['Employee', 'Manager', 'HR', 'Admin'], default: 'Employee' },
-  managerId: { type: mongoose.Schema.Types.ObjectId, ref: 'Employee' },
+  managerId: { type: mongoose.Schema.Types.ObjectId, ref: 'Employee' }, // <-- Ensure this exists
   leaveBalance: {
     annual: { type: Number, default: 12 },
     sick: { type: Number, default: 8 },
